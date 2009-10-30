@@ -1,3 +1,8 @@
+#
+# Monkey patches for Rails to work with Ruby 1.9. Only for Rails 2.3.4. Will be obsolete
+# on next patch.
+#
+# Copy this file into RAILS_ROOT/config/initializers and restart your server.
 module ActionController
   module Integration
     class Session

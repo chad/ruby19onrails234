@@ -2,4 +2,4 @@
 Monkey patches for Rails to work with Ruby 1.9. Only for Rails 2.3.4. Will be obsolete
 on next patch.
 
-Copy these files into your RAILS_ROOT and restart your server.
+Copy these files into your Rails.root and restart your server.

@@ -1,8 +1,3 @@
-#
-# Monkey patches for Rails to work with Ruby 1.9. Only for Rails 2.3.4. Will be obsolete
-# on next patch.
-#
-# Copy this file into RAILS_ROOT/config/initializers and restart your server.
 module ActionController
   module Integration
     class Session
@@ -114,21 +109,6 @@ module ActionController
             {"CONTENT_TYPE" => "multipart/form-data; boundary=#{boundary}"}))
         return status
       end
-    end
-  end
-end
-
-module ActiveSupport
-  class MessageVerifier
-    # constant-time comparison algorithm to prevent timing attacks
-    def secure_compare(a, b)
-      return false unless a.bytesize == b.bytesize
-
-      l = a.unpack "C#{a.bytesize}"
-
-      res = 0
-      b.each_byte { |byte| res |= byte ^ l.shift }
-      res == 0
     end
   end
 end
